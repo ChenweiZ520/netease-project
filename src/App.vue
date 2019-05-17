@@ -1,19 +1,22 @@
 <template>
   <div id="app">
-    App.....
+    <router-view></router-view>
+    <Footer v-show="$route.meta.isShow"/>
   </div>
 </template>
 
 <script>
-
-export default {
-  name: 'App',
-  components: {
-  
+  import Footer from './components/Footer/Footer'
+  export default {
+    name: 'App',
+    components: {
+      Footer
+    }
   }
-}
 </script>
 
-<style>
-
+<style lang="stylus" rel="stylesheet/stylus">
+  #app
+    width 100%
+    height 100%
 </style>

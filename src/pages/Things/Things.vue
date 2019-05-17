@@ -1,0 +1,13 @@
+<template>
+	<div>Things</div>
+</template>
+
+<script type="text/ecmascript-6">
+  export default {
+    name: "Things"
+  }
+</script>
+
+<style lang="stylus" rel="stylesheet/stylus" scoped>
+
+</style>
