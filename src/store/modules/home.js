@@ -17,7 +17,7 @@ const actions = {
     const result = await reqHomeGrow()
     if (result.code===0){
       const homeDate = result.data
-      console.log(homeDate)
+      //console.log(homeDate)
       commit(HOMEDATE_LIST,homeDate)
     }
   },

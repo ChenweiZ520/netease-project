@@ -12,7 +12,11 @@
     </div>
     <ShopList/>
     <Split/>
-    <newPersonShare/>
+    <newPersonShare/> <!--新人专享礼-->
+    <Split/>
+    <directSupply/>  <!--厂家直供-->
+    <Split/>
+    
   </div>
 </template>
 
@@ -23,6 +27,7 @@
   import ShopList from './components/ShopLsit/ShopList'
   import Split from '@/components/Split/Split'
   import newPersonShare from './components/newPersonShare/newPersonShare'
+  import directSupply from './components/directSupply/directSupply'
   export default {
     name: "Home",
     computed:{
@@ -38,7 +43,8 @@
       Swiper,
       ShopList,
       Split,
-      newPersonShare
+      newPersonShare,
+      directSupply
     }
   }
 </script>

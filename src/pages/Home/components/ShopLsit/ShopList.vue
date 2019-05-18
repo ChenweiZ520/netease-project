@@ -1,6 +1,6 @@
 <template>
 	<div class="shopList_container">
-    <ul class="shop_list">
+    <ul class="shop_list" v-if="homeDate.kingKongModule">
       <li v-for="(item,index) in homeDate.kingKongModule.kingKongList" :key="index">
         <a href="javascript:;">
           <img :src="item.picUrl" alt="">
@@ -12,6 +12,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+  
   import {mapState} from 'vuex'
   export default {
     name: "ShopList",
@@ -19,7 +20,8 @@
       ...mapState({
         homeDate:state=>state.home.homeDate
       }),
-    }
+    },
+    
   }
 </script>
 
