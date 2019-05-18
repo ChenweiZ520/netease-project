@@ -42,9 +42,9 @@ exports.cssLoaders = function (options) {
 
     //const loaders = [cssLoader, px2remLoader]
 
-    if (options.usePostCSS) {
-      loaders.push(postcssLoader)
-    }
+    // if (options.usePostCSS) {
+    //   loaders.push(postcssLoader)
+    // }
 
     if (loader) {
       loaders.push({
