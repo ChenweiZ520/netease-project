@@ -127,6 +127,7 @@
       .nav_wrap
         width 100%
         height 60px
+        display flex
         .nav_list
           display flex
           height 60px
@@ -141,7 +142,7 @@
               margin-left 30px
             &.hight
               color #b4282d
-              border-bottom 2px solid #b4282d
+              border-bottom 5px solid #b4282d
       .nav_right
         z-index 5
         position absolute
@@ -153,7 +154,7 @@
           display inline-block
           width 50px
           height 60px
-          background-image linear-gradient(to right,rgba(255,255,255,0) 0,#fff 100%)
+          //background-image linear-gradient(to right,rgba(255,255,255,0) 0,#fff 100%)
           vertical-align middle
         .nav_icon
           display inline-block

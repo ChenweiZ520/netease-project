@@ -4,34 +4,41 @@
     <Swiper/>
     <div class="grow_container">
       <ul class="grow_list">
-        <li class="grow_item" v-for="(item,index) in growList" :key="index">
+        <li class="grow_item" v-for="(item,index) in homeDate.policyDescList" :key="index">
           <img :src="item.icon">
           <span>{{item.desc}}</span>
         </li>
       </ul>
     </div>
+    <ShopList/>
+    <Split/>
+    <newPersonShare/>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  import {reqHomeGrow} from '@/api'
+  import {mapState} from 'vuex'
   import Header from '@/components/Header/Header'
   import Swiper from './components/Swiper/Swiper'
+  import ShopList from './components/ShopLsit/ShopList'
+  import Split from '@/components/Split/Split'
+  import newPersonShare from './components/newPersonShare/newPersonShare'
   export default {
     name: "Home",
-    data(){
-      return {
-        growList:[]
-      }
+    computed:{
+      ...mapState({
+        homeDate:state=>state.home.homeDate
+      }),
     },
-    async mounted(){
-      const result = await reqHomeGrow()
-      //console.log(result.data.policyDescList)
-      this.growList = result.data.policyDescList
+    mounted(){
+      this.$store.dispatch('getHomeDate')
     },
     components:{
       Header,
-      Swiper
+      Swiper,
+      ShopList,
+      Split,
+      newPersonShare
     }
   }
 </script>
