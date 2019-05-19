@@ -1,10 +1,6 @@
 <template>
-	<div class="supply_container">
-    <div class="supply_title">
-      <span class="title_left">品牌制造商直供</span>
-      <span class="title_right"> 更多> </span>
-    </div>
-    <ul class="supply_content">
+	<div class="picture_container">
+    <ul class="picture_content">
       <li v-for="(item,index) in homeDate.sceneLightShoppingGuideModule" :key="index">
         <p class="content_top">{{item.styleItem.title}}</p>
         <p class="content_bottom">{{item.styleItem.desc}}</p>
@@ -19,7 +15,7 @@
 <script type="text/ecmascript-6">
   import {mapState} from 'vuex'
   export default {
-    name: "directSupply",
+    name: "fourPicture",
     computed:{
       ...mapState({
         homeDate:state=>state.home.homeDate
@@ -29,23 +25,13 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-  @import "../../../../common/stylus/mixins.styl"
-  .supply_container
+  .picture_container
     width 100%
-    height 682px
-    .supply_title
-      width 100%
-      height 100px
-      line-height 100px
-      font-size 36px
-      padding 0 30px
-      .title_right
-        float right
-        margin-right 70px
-    .supply_content
+    height 576px
+    padding 10px 30px 30px 26px
+    .picture_content
       clearFix()
       width 100%
-      margin 0 28px
       li
         float left
         width 323px
@@ -64,5 +50,5 @@
         img
           width 150px
           height 150px
-  
+
 </style>

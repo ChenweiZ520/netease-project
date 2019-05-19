@@ -14,9 +14,19 @@
     <Split/>
     <newPersonShare/> <!--新人专享礼-->
     <Split/>
-    <directSupply/>  <!--厂家直供-->
+    <directSupply/>  <!--制造厂直供-->
     <Split/>
-    
+    <HotSale/>  <!--热销榜-->
+    <Split/>
+    <popularity/>  <!--人气推荐-->
+    <Split/>
+    <limitShop/>   <!--限时购-->
+    <Split/>
+    <productPublish/>  <!--新品首发-->
+    <Split/>
+    <fourPicture/>  <!--四个图-->
+    <Split/>
+    <sweetList/>
   </div>
 </template>
 
@@ -28,6 +38,12 @@
   import Split from '@/components/Split/Split'
   import newPersonShare from './components/newPersonShare/newPersonShare'
   import directSupply from './components/directSupply/directSupply'
+  import HotSale from './components/HotSale/HotSale'
+  import popularity from './components/popularity/popularity'
+  import limitShop from './components/limitShop/limitShop'
+  import productPublish from './components/productPublish/productPublish'
+  import fourPicture from './components/fourPicture/fourPicture'
+  import sweetList from './components/sweetList/sweetList'
   export default {
     name: "Home",
     computed:{
@@ -44,7 +60,13 @@
       ShopList,
       Split,
       newPersonShare,
-      directSupply
+      directSupply,
+      HotSale,
+      popularity,
+      limitShop,
+      productPublish,
+      fourPicture,
+      sweetList
     }
   }
 </script>
