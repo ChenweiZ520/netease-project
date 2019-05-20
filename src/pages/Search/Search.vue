@@ -4,9 +4,17 @@
       <div class="search_title">
         <div class="title_left">
           <span class="icon"></span>
-          <input v-model="searchData" type="text" placeholder="英国摩飞榨汁杯 仅199元">
+          <input @keyup="search" v-model="userInput" type="text" placeholder="英国摩飞榨汁杯 仅199元">
+          <i v-if="userInput" @click="handleX"></i>
         </div>
-        <span class="cancel">取消</span>
+        <span class="cancel" @click="$router.back()">取消</span>
+      </div>
+      <div class="search_result" v-if="userInput">
+        <ul class="result_list">
+          <li v-for="(item,index) in searchData" :key="index">
+            {{item}}
+          </li>
+        </ul>
       </div>
       <div class="search_list">
         <div class="list_header">热门搜索</div>
@@ -30,11 +38,28 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import {mapState} from 'vuex'
   export default {
     name: "Search",
     data(){
       return {
-        searchData:''
+        userInput:''
+      }
+    },
+    computed:{
+      ...mapState({
+        searchData:state=>state.home.searchData
+      })
+    },
+    methods:{
+      handleX(){
+        this.userInput = ''
+      },
+      search(){
+        clearTimeout(this.timerId)
+        this.timerId = setTimeout(()=>{
+          this.$store.dispatch('getSearchData',this.userInput)
+        },300)
       }
     }
   }
@@ -73,13 +98,38 @@
             background-repeat no-repeat
             background-size 100% 100%
             margin-right 16px
+            margin-bottom 8px
             vertical-align middle
           input
             background #f4f4f4
             font-size 28px
             outline none
+          >i
+            display inline-block
+            width 50px
+            height 50px
+            background-image url("http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/clearIpt-0821f71561.png")
+            background-repeat no-repeat
+            background-size 100% 100%
+            vertical-align middle
+            margin-left 110px
         .cancel
           font-size 30px
+      .search_result
+        width 100%
+        min-height 1256px
+        background #f4f4f4
+        position absolute
+        left 0
+        top 88px
+        >ul
+          padding-left 30px
+          background #fff
+          li
+            height 90px
+            line-height 90px
+            font-size 28px
+            border-bottom 1px solid #f4f4f4
       .search_list
         width 100%
         padding 0 30px

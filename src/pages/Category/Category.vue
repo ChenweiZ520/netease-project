@@ -1,7 +1,7 @@
 <template>
 	<div class="category_container">
     <div class="category_title">
-      <div class="title_search">
+      <div class="title_search" @click="$router.push('/search')">
         <i class="title_icon"></i>
         <span>搜索商品，共22651款好物</span>
       </div>

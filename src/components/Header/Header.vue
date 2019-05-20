@@ -2,7 +2,7 @@
 	<div class="header_container">
     <div class="header_top">
       <a class="logo" href="javascript:;"></a>
-      <div class="header_search">
+      <div class="header_search" @click="$router.push('/search')">
         <i class="icon_search"></i>
         <span>搜索商品，共22843款好物</span>
       </div>
