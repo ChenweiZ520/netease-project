@@ -24,6 +24,7 @@
   .homeFooter
     width 100%
     height 245px
+    padding-bottom 98px
     background #414141
     .wrap
       padding 54px 20px 28px 20px

@@ -88,10 +88,11 @@
           span
             display inline-block
             font-size 26px
-            color #fff
+            color #000
             &.one
               width 36px
               height 36px
+              color #fff
               line-height 36px
               text-align center
               background #333

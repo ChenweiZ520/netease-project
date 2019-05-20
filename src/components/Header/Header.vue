@@ -71,6 +71,10 @@
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   @import "../../common/stylus/mixins.styl"
   .header_container
+    z-index 99
+    position fixed
+    top 0
+    left 0
     width 100%
     height 148px
     .header_top
@@ -132,7 +136,9 @@
           display flex
           height 60px
           line-height 60px
+          padding-right 100px
           white-space nowrap
+          background #fff
           li
             height 60px
             padding 0 20px

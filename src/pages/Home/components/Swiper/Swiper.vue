@@ -41,6 +41,7 @@
     mounted() {
       new Swiper('.swiper-container',{
         loop: true,
+        autoplay:true,
         pagination: {
           el: '.swiper-pagination',
         },
@@ -53,6 +54,7 @@
   .swiper_content
     width 100%
     height 370px
+    padding-top 148px
     .swiper-container
       width 100%
       height 100%

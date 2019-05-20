@@ -2,33 +2,35 @@
 	<div class="home_container">
     <Header/>
     <div class="home_wrap">
-      <Swiper/>
-      <div class="grow_container">
-        <ul class="grow_list">
-          <li class="grow_item" v-for="(item,index) in homeDate.policyDescList" :key="index">
-            <img :src="item.icon">
-            <span>{{item.desc}}</span>
-          </li>
-        </ul>
+      <div>
+        <Swiper/>
+        <div class="grow_container">
+          <ul class="grow_list">
+            <li class="grow_item" v-for="(item,index) in homeDate.policyDescList" :key="index">
+              <img :src="item.icon">
+              <span>{{item.desc}}</span>
+            </li>
+          </ul>
+        </div>
+        <ShopList/>
+        <Split/>
+        <newPersonShare/> <!--新人专享礼-->
+        <Split/>
+        <directSupply/>  <!--制造厂直供-->
+        <Split/>
+        <HotSale/>  <!--热销榜-->
+        <Split/>
+        <popularity/>  <!--人气推荐-->
+        <Split/>
+        <limitShop/>   <!--限时购-->
+        <Split/>
+        <productPublish/>  <!--新品首发-->
+        <Split/>
+        <fourPicture/>  <!--四个图-->
+        <Split/>
+        <sweetList/>
+        <homeFooter/>
       </div>
-      <ShopList/>
-      <Split/>
-      <newPersonShare/> <!--新人专享礼-->
-      <Split/>
-      <directSupply/>  <!--制造厂直供-->
-      <Split/>
-      <HotSale/>  <!--热销榜-->
-      <Split/>
-      <popularity/>  <!--人气推荐-->
-      <Split/>
-      <limitShop/>   <!--限时购-->
-      <Split/>
-      <productPublish/>  <!--新品首发-->
-      <Split/>
-      <fourPicture/>  <!--四个图-->
-      <Split/>
-      <sweetList/>
-      <homeFooter/>
     </div>
   </div>
 </template>
@@ -58,11 +60,17 @@
     },
     mounted(){
       this.$store.dispatch('getHomeDate')
-      // this.$nextTick(()=>{
-      //   new BScroll('.home_wrap',{
-      //     click:true
-      //   })
-      // })
+      
+      this.$nextTick(()=>{
+        const height = document.documentElement.clientHeight
+        const homeWrap = document.querySelector('.home_wrap')
+        homeWrap.style.height = height + 'px'
+        if(this.classScroll){
+          this.classScroll = new BScroll('.home_wrap',{
+            click:true
+          })
+        }
+      })
     },
     components:{
       Header,
