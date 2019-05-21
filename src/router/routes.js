@@ -8,6 +8,8 @@ import Things from '../pages/Things/Things'
 import ShopCart from '../pages/ShopCart/ShopCart'
 import Personal from '../pages/Personal/Personal'
 import Search from '../pages/Search/Search'
+import phoneLogin from '../pages/Personal/phoneLogin/phoneLogin'
+import emailLogin from '../pages/Personal/emailLogin/emailLogin'
 
 export default [
   {
@@ -40,7 +42,17 @@ export default [
   },
   {
     path:'/personal',
-    component:Personal
+    component:Personal,
+    children:[
+      {
+        path:'/personal/phoneLogin',
+        component:phoneLogin
+      },
+      {
+        path:'/personal/emailLogin',
+        component:emailLogin
+      }
+    ]
   },
   {
     path:'/search',
