@@ -10,6 +10,7 @@ import Personal from '../pages/Personal/Personal'
 import Search from '../pages/Search/Search'
 import phoneLogin from '../pages/Personal/phoneLogin/phoneLogin'
 import emailLogin from '../pages/Personal/emailLogin/emailLogin'
+import Recommend from '../pages/Things/Recommend/Recommend'
 
 export default [
   {
@@ -29,6 +30,17 @@ export default [
   {
     path:'/things',
     component:Things,
+    children:[
+      {
+        path:'/things/recommend',
+        component:Recommend
+      },
+      {
+        path:'/things',
+        redirect: '/things/recommend'
+      }
+
+    ],
     meta:{
       isShow:true
     }

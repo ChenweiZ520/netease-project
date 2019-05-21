@@ -5,6 +5,7 @@ import actions from './actions'
 import getters from './getters'
 import home from './modules/home'
 import category from './modules/category'
+import things from './modules/things'
 
 Vue.use(Vuex)
 
@@ -14,7 +15,8 @@ const store = new Vuex.Store({
   getters,
   modules:{
     home,
-    category
+    category,
+    things
   }
 })
 

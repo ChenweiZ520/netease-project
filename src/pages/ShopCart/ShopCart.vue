@@ -2,7 +2,7 @@
 	<div class="shopCart_container">
     <div class="shopCart_title">
       <span class="cart">购物车</span>
-      <span class="ticket">领券</span>
+      <span class="ticket" @click="$router.replace('/personal')">领券</span>
     </div>
     <ul class="shopCart_list">
       <li>
@@ -24,7 +24,7 @@
       </div>
       <div class="add_shop">
         <p>去添加点什么吧</p>
-        <button>登录</button>
+        <button @click="$router.replace('/personal')">登录</button>
       </div>
     </div>
   </div>
