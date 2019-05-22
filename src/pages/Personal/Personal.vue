@@ -4,7 +4,7 @@
       <a @click="$router.replace('/home')" class="iconfont icon-shouye title_left" href="javascript:;"></a>
       <span class="title_center"></span>
       <div class="title_right">
-        <a @click="$router.replace('/search')" class="iconfont icon-fangdajing search" href="javascript:;"></a>
+        <a @click="$router.push('/search')" class="iconfont icon-fangdajing search" href="javascript:;"></a>
         <a @click="$router.replace('/shopcart')" class="iconfont icon-gouwuche2 cart" href="javascript:;"></a>
       </div>
     </div>

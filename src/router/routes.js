@@ -11,6 +11,7 @@ import Search from '../pages/Search/Search'
 import phoneLogin from '../pages/Personal/phoneLogin/phoneLogin'
 import emailLogin from '../pages/Personal/emailLogin/emailLogin'
 import Recommend from '../pages/Things/Recommend/Recommend'
+import Selected from '../pages/Things/Selected/Selected'
 
 export default [
   {
@@ -37,6 +38,10 @@ export default [
         meta:{
           isShow:true
         }
+      },
+      {
+        path:'/things/selected',
+        component:Selected
       },
       {
         path:'/things',

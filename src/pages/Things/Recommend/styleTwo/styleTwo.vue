@@ -9,7 +9,7 @@
       <div class="desc ellipsis">{{topic.subTitle}}</div>
       <div class="styleTwo_bottom">
         <i class="iconfont icon-yanjing"></i>
-        <span>{{topic.readCount}}看过</span>
+        <span>{{topic.readCount | read-count}}人看过</span>
       </div>
     </div>
     <div class="styleTwo_right">
@@ -21,10 +21,8 @@
 <script type="text/ecmascript-6">
   export default {
     name: "StyleTwo",
-    data(){
-      return {
-        topic:Object
-      }
+    props:{
+      topic:Object
     }
   }
 </script>

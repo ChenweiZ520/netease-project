@@ -10,7 +10,7 @@
     </div>
     <div class="styleOne_bottom">
       <i class="iconfont icon-yanjing"></i>
-      <span>{{topic.readCount}}人看过</span>
+      <span>{{topic.readCount | read-count}}人看过</span>
     </div>
   </div>
 </template>
@@ -18,10 +18,8 @@
 <script type="text/ecmascript-6">
   export default {
     name: "StyleOne",
-    data(){
-      return {
-        topic:Object
-      }
+    props:{
+      topic:Object
     }
   }
 </script>

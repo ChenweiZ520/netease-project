@@ -43,25 +43,37 @@
     name: "Search",
     data(){
       return {
-        userInput:''
+        userInput:'',
+        //searchData:this.$store.state.home.searchData
       }
     },
     computed:{
       ...mapState({
         searchData:state=>state.home.searchData
-      })
+      }),
     },
+    // computed:{
+    //   searchData(){
+    //     return this.$store.state.home.searchData
+    //   }
+    // },
     methods:{
       handleX(){
         this.userInput = ''
+        this.$store.state.home.searchData = []
+        this.searchData = []
       },
       search(){
-        clearTimeout(this.timerId)
+        this.$store.state.home.searchData = []
+        this.searchData = []
+        if(this.timerId)clearTimeout(this.timerId)
         this.timerId = setTimeout(()=>{
           this.$store.dispatch('getSearchData',this.userInput)
         },300)
-      }
-    }
+      },
+      
+    },
+    
   }
 </script>
 

@@ -1,8 +1,8 @@
 <template>
 	<div class="recommend_container">
     <div class="recommend_content">
-      <ul v-for="(recommend,index) in commendData" :key="index">
-        <li v-for="(topic,index) in recommend.topics" :key="index">
+      <ul v-for="(item,index) in commendData" :key="index">
+        <li v-for="(topic,index) in item.topics" :key="index">
           <styleOne v-if="topic.style===1" :topic="topic"></styleOne>
           <styleTwo v-if="topic.style===2" :topic="topic"></styleTwo>
         </li>
@@ -35,6 +35,7 @@
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   .recommend_container
     width 100%
+    padding-top 172px
     background #f3f5f7
     .recommend_content
       width 100%

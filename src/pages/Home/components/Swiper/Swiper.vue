@@ -54,7 +54,7 @@
   .swiper_content
     width 100%
     height 370px
-    padding-top 148px
+    padding-top 153px
     .swiper-container
       width 100%
       height 100%
