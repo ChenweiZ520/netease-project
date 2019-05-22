@@ -33,7 +33,10 @@ export default [
     children:[
       {
         path:'/things/recommend',
-        component:Recommend
+        component:Recommend,
+        meta:{
+          isShow:true
+        }
       },
       {
         path:'/things',

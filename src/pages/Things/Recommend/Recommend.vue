@@ -1,14 +1,20 @@
 <template>
 	<div class="recommend_container">
     <div class="recommend_content">
-      <typeOne/>
+      <ul v-for="(recommend,index) in commendData" :key="index">
+        <li v-for="(topic,index) in recommend.topics" :key="index">
+          <styleOne v-if="topic.style===1" :topic="topic"></styleOne>
+          <styleTwo v-if="topic.style===2" :topic="topic"></styleTwo>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import {mapState} from 'vuex'
-  import typeOne from './typeOne/typeOne'
+  import styleOne from './styleOne/styleOne'
+  import styleTwo from './styleTwo/styleTwo'
   export default {
     name: "Recommend",
     computed:{
@@ -20,7 +26,8 @@
       this.$store.dispatch('getCommendData')
     },
     components:{
-      typeOne
+      styleOne,
+      styleTwo
     }
   }
 </script>
@@ -28,6 +35,7 @@
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   .recommend_container
     width 100%
+    background #f3f5f7
     .recommend_content
       width 100%
 </style>
