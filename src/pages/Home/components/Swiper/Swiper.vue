@@ -40,17 +40,32 @@
     name: "Swiper",
     mounted() {
       new Swiper('.swiper-container',{
+        direction: 'horizontal',
         loop: true,
         autoplay:true,
+        speed: 1000,
         pagination: {
           el: '.swiper-pagination',
+          type:'custom',
+          renderCustom(swiper,current,total){
+            let customPaginationHtml = ""
+            for(let i = 0; i < total; i++) {
+              //判断哪个分页器此刻应该被激活
+              if(i === (current - 1)) {
+                customPaginationHtml += '<span class="swiper-pagination-customs swiper-pagination-customs-active"></span>';
+              } else {
+                customPaginationHtml += '<span class="swiper-pagination-customs"></span>';
+              }
+            }
+            return customPaginationHtml
+          }
         },
       })
     }
   }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus" scoped>
+<style lang="stylus" rel="stylesheet/stylus">
   .swiper_content
     width 100%
     height 370px
@@ -61,6 +76,20 @@
       img
         width 100%
         height 100%
-        
-    
+      .swiper-pagination-custom
+        width 100%
+        height 4px
+        bottom 50px
+        .swiper-pagination-customs
+          width 40px
+          height 4px
+          display inline-block
+          background-color rgba(255, 255, 255, .5)
+          margin 0 10px 0 0
+        .swiper-pagination-customs-active
+          opacity 1
+          background-color rgba(255, 255, 255, 1)
+      
+
+
 </style>

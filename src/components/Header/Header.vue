@@ -6,7 +6,7 @@
         <i class="icon_search"></i>
         <span>搜索商品，共22843款好物</span>
       </div>
-      <button class="login">登录</button>
+      <button class="login" @click="$router.replace('/personal')">登录</button>
     </div>
     <div class="header_nav">
       <div class="nav_wrap">
@@ -215,7 +215,7 @@
       z-index 1
       left 0
       top 0
-      right 0
-      bottom 0
+      width 100%
+      height 1334px
       background rgba(0,0,0,0.5)
 </style>
